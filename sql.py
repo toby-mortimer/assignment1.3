@@ -65,15 +65,15 @@ Mcourse_schema = CoursesSchema(many=True)  # many info
 def add_course():
     title = request.json['title']
     type = request.json['type']
-    teacherinfo = request.json['teacher_info']
+    teacher_info = request.json['teacher_info']
     requirements = request.json['requirements']
-    ucaspoints = request.json['ucas_points']
+    ucas_points = request.json['ucas_points']
     topics = request.json['topics']
     description = request.json['description']
     testimonials = request.json['testimonials']
-    examdetails = request.json['exam_details']
+    exam_details = request.json['exam_details']
 
-    new_course = Courses(title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails)
+    new_course = Courses(title, type, teacher_info, requirements, ucas_points, topics, description, testimonials, exam_details)
     db.session.add(new_course)
     db.session.commit()
 
