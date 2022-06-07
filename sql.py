@@ -24,6 +24,7 @@ ma = Marshmallow(app)
 
 class Courses(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50))
     type = db.Column(db.String(100))
     teacher_info = db.Column(db.String(100))
     requirements = db.Column(db.String(100))
@@ -33,7 +34,8 @@ class Courses(db.Model):
     testimonials = db.Column(db.String(500))
     exam_details = db.Column(db.String(100))
 
-    def __init__(self, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails):
+    def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails):
+        self.title = title
         self.type = type
         self.teacher_info = teacherinfo
         self.requirements = requirements
@@ -48,7 +50,7 @@ class Courses(db.Model):
 
 class CoursesSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'type', 'teacher_info', 'requirements', 'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
+        fields = ('id', 'title', 'type', 'teacher_info', 'requirements', 'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
 
 
 # creates an instance of the schema
@@ -61,6 +63,7 @@ Mcourse_schema = CoursesSchema(many=True)  # many info
 
 @app.route('/course', methods=['POST'])
 def add_course():
+    title = request.json['title']
     type = request.json['type']
     teacherinfo = request.json['teacher_info']
     requirements = request.json['requirements']
@@ -70,7 +73,7 @@ def add_course():
     testimonials = request.json['testimonials']
     examdetails = request.json['exam_details']
 
-    new_course = Courses(type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails)
+    new_course = Courses(title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails)
     db.session.add(new_course)
     db.session.commit()
 
@@ -96,6 +99,7 @@ def get_person(id):
 @app.route('/course/<id>', methods=['PUT'])
 def update_course(id):
     course = Courses.query.get(id)
+    title = request.json['title']
     type = request.json['type']
     teacherinfo = request.json['teacher_info']
     requirements = request.json['requirements']
@@ -105,6 +109,7 @@ def update_course(id):
     testimonials = request.json['testimonials']
     examdetails = request.json['exam_details']
 
+    course.title = title
     course.type = type
     course.teacher_info = teacherinfo
     course.requirements = requirements
