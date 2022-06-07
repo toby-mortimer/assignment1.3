@@ -1,3 +1,4 @@
+import re
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -32,74 +33,98 @@ class Courses(db.Model):
     testimonials = db.Column(db.String(500))
     exam_details = db.Column(db.String(100))
 
-    def __init__(self, firstname, surname):
-        self.first_name = firstname
-        self.surname = surname
+    def __init__(self, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails):
+        self.type = type
+        self.teacher_info = teacherinfo
+        self.requirements = requirements
+        self.ucas_points = ucaspoints
+        self.topics = topics
+        self.description = description
+        self.testimonials = testimonials
+        self.exam_details = examdetails
 
 # creates the schema for marshmallow to use
 
 
-class PeopleSchema(ma.Schema):
+class CoursesSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'first_name', 'surname')
+        fields = ('id', 'type', 'teacher_info', 'requirements', 'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
 
 
 # creates an instance of the schema
-person_schema = PeopleSchema()  # single person
-people_schema = PeopleSchema(many=True)  # people
+course_schema = CoursesSchema()  # single info
+Mcourse_schema = CoursesSchema(many=True)  # many info
 
 # C.R.U.D. operations for API
 # Creates a new person in the databse
 
 
-@app.route('/people', methods=['POST'])
-def add_person():
-    firstname = request.json['first_name']
-    surname = request.json['surname']
+@app.route('/course', methods=['POST'])
+def add_course():
+    type = request.json['type']
+    teacherinfo = request.json['teacher_info']
+    requirements = request.json['requirements']
+    ucaspoints = request.json['ucas_points']
+    topics = request.json['topics']
+    description = request.json['description']
+    testimonials = request.json['testimonials']
+    examdetails = request.json['exam_details']
 
-    new_person = People(firstname, surname)
-    db.session.add(new_person)
+    new_course = Courses(type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails)
+    db.session.add(new_course)
     db.session.commit()
 
-    return person_schema.jsonify(new_person)
+    return course_schema.jsonify(new_course)
 
 
 # Gets all people in the database
-@app.route('/people', methods=['GET'])
-def get_people():
-    all_people = People.query.all()
-    result = people_schema.dump(all_people)
+@app.route('/course', methods=['GET'])
+def get_course():
+    all_course = Courses.query.all()
+    result = course_schema.dump(all_course)
     return jsonify(result)
 
 
 # Gets a single person by ID
-@app.route('/people/<id>', methods=['GET'])
+@app.route('/course/<id>', methods=['GET'])
 def get_person(id):
-    person = People.query.get(id)
-    return person_schema.jsonify(person)
+    course = Courses.query.get(id)
+    return course_schema.jsonify(course)
 
 
 # Updates a person with the id
-@app.route('/people/<id>', methods=['PUT'])
-def update_person(id):
-    person = People.query.get(id)
-    first_name = request.json['first_name']
-    surname = request.json['surname']
+@app.route('/course/<id>', methods=['PUT'])
+def update_course(id):
+    course = Courses.query.get(id)
+    type = request.json['type']
+    teacherinfo = request.json['teacher_info']
+    requirements = request.json['requirements']
+    ucaspoints = request.json['ucas_points']
+    topics = request.json['topics']
+    description = request.json['description']
+    testimonials = request.json['testimonials']
+    examdetails = request.json['exam_details']
 
-    person.first_name = first_name
-    person.surname = surname
+    course.type = type
+    course.teacher_info = teacherinfo
+    course.requirements = requirements
+    course.ucas_points = ucaspoints
+    course.topics = topics
+    course.description = description
+    course.testimonials = testimonials
+    course.exam_details = examdetails
 
     db.session.commit()
-    return person_schema.jsonify(person)
+    return course.jsonify(course)
 
 
 # Deletes the person with the id
-@app.route('/people/<id>', methods=['DELETE'])
-def delete_person(id):
-    person = People.query.get(id)
-    db.session.delete(person)
+@app.route('/course/<id>', methods=['DELETE'])
+def delete_course(id):
+    course = Courses.query.get(id)
+    db.session.delete(course)
     db.session.commit()
-    return person_schema.jsonify(person)
+    return course_schema.jsonify(course)
 
 
 # Main program loop
