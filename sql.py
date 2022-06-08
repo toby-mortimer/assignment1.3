@@ -84,7 +84,7 @@ def add_course():
 @app.route('/course', methods=['GET'])
 def get_course():
     all_course = Courses.query.all()
-    result = course_schema.dump(all_course)
+    result = Mcourse_schema.dump(all_course)
     return jsonify(result)
 
 
