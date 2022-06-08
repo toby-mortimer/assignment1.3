@@ -1,4 +1,3 @@
-import re
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -86,7 +85,7 @@ def add_course():
 @app.route('/course', methods=['GET'])
 def get_course():
     all_course = Courses.query.all()
-    result = course_schema.dump(all_course)
+    result = Mcourse_schema.dump(all_course)
     return jsonify(result)
 
 
