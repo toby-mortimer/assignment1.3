@@ -1,7 +1,7 @@
 import re
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
+from marshmallow import Marshmallow
 import os
 
 
@@ -50,7 +50,8 @@ class Courses(db.Model):
 
 class CoursesSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'title', 'type', 'teacher_info', 'requirements', 'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
+        fields = ('id', 'title', 'type', 'teacher_info', 'requirements',
+                  'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
 
 
 # creates an instance of the schema
@@ -73,7 +74,8 @@ def add_course():
     testimonials = request.json['testimonials']
     exam_details = request.json['exam_details']
 
-    new_course = Courses(title, type, teacher_info, requirements, ucas_points, topics, description, testimonials, exam_details)
+    new_course = Courses(title, type, teacher_info, requirements,
+                         ucas_points, topics, description, testimonials, exam_details)
     db.session.add(new_course)
     db.session.commit()
 
@@ -135,4 +137,3 @@ def delete_course(id):
 # Main program loop
 if __name__ == '__main__':
     app.run(debug=True)
-
