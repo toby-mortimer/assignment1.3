@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css', _external=True) }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% block title %}<title>Layout</title>{% endblock %}
+    {% endblock %}
     
+</head>
+
+<body>
+    <div class="header">
+        {% block header %}
+        
+        {% endblock %}
+    </div>
+    <div class="content">{% block content %}{% endblock %}</div>
+    <div class="footer">
+        {% block footer %}
+        <section class="left">
+            <h3>Contact Us:</h3>
+            <p>Call 70608929607</p>
+            <p>Email s6c@s6c.mlp.college</p>
+            <p>Contact Form</p>
+        </section>
+        <section class="right">
+            <p>66-78 Tollgate Road, Salisbury, SP1 2JJ</p>
+            <img class="image" src={{ url_for('static', filename='location.png', _external=True) }} alt="" width="auto" height="120px">
+        </section>
+        {% endblock %}
+    </div>
 </body>
 </html>
