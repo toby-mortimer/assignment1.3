@@ -121,7 +121,7 @@ def update_course(id):
     course.exam_details = examdetails
 
     db.session.commit()
-    return course.jsonify(course)
+    return course_schema.jsonify(course)
 
 
 # Deletes the person with the id
