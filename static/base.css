@@ -1,13 +1,13 @@
+/* footer css */
 .footer {
     display: grid;
-    grid-template-columns: 25vw 75vw;
+    grid-template-columns: 25% 75%;
+    width: 100%;
     position: absolute;
-    left: 0;
-    right: 0;
-    grid-template-rows: auto;
+    grid-template-rows: 100%;
     grid-template-areas: "left right";
 }
-
+/* footer - left section */
 .left {
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     color: white;
     padding: 4%;
 }
-
+/* footer - right section */
 .right {
     display: flex;
     flex-direction: row;
@@ -28,7 +28,7 @@
     color: white;
     padding: 2%;
 }
-
+/* header css */
 .image {
     border-radius: 8px;
 }
@@ -52,40 +52,40 @@
     border-bottom-width: 6px;
     border-bottom-color: #3f84ec;
   }
-
+/* container of the left and right part of the header */
   .box {
     height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
   }
-
+/* logo and the text */
   #left {
     justify-content: flex-start;
     gap: 3rem;
   }
-
+/* searchbar and sidebar button */
   #right {
     justify-content: end;
     gap: 5rem;
   }
-
+/* logo of s6c */
   .icon {
     border-radius: 70px;
     height: 80px;
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
-
+/* both the name and motto */
   h3 {
     color: white;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
   }
-
+/* making the font-size of motto smaller */
   h3.motto {
     font-size: large;
   }
-
+/* button class of the sidebar icon */
   #main {
     background-color: #701DA4;
     border-top: 0;
@@ -93,7 +93,7 @@
     height: 80px;
     margin-right: 2rem;
   }
-
+/* form of the searchbar */
   .bar {
     font-family: 'Roboto', sans-serif;    
     font-style: italic;
@@ -106,7 +106,7 @@
     outline: none;
     background: #ffffff;
   }
-  
+  /* the whole searchbar */
   #form {
     display: flex;
     align-items: center;
@@ -117,13 +117,13 @@
     background: #ffffff;
     margin-left: 5rem;
   }
-  
+  /* button class of the search */
   .magnify {
     border-style: none;
     background-color: #ffffff;
     height: 20px;
   }
-
+  /* logo of magnifying glass */
   .search-logo {
     margin-bottom: 100px;
   }
