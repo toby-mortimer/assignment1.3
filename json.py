@@ -144,10 +144,9 @@ json = """{
 myList = json.split(",,")
 
 for course in myList:
-    print(course)
-    # url = 'http://127.0.0.1:/course'
-    # r = requests.post(url, course)
-    # print(f"Status Code: {r.status_code}, Response: {r.json()}")
+    url = 'http://127.0.0.1:/course'
+    r = requests.post(url, course)
+    print(f"Status Code: {r.status_code}, Response: {r.json()}")
 
 # print(myList[0])
 
