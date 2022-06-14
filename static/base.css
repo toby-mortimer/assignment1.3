@@ -32,3 +32,41 @@
 .image {
     border-radius: 8px;
 }
+
+.header {
+    display: flex;
+    height: 100px;
+    background-color: #701DA4;
+}
+
+.header-box {
+    background-color: #701da4;
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 100%;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    grid-template-areas: "logo title navigation side";
+    border-bottom-style: solid;
+    border-bottom-width: 6px;
+    border-bottom-color: #3f84ec;
+  }
+
+  .icon {
+    border-radius: 70px;
+    height: 80px;
+  }
+
+  .name {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+  }
+
+  .motto {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: large;
+  }
