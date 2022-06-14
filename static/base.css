@@ -85,14 +85,7 @@
   h3.motto {
     font-size: large;
   }
-/* button class of the sidebar icon */
-  #main {
-    background-color: #701DA4;
-    border-top: 0;
-    border: none;
-    height: 80px;
-    margin-right: 2rem;
-  }
+
 /* form of the searchbar */
   .bar {
     font-family: 'Roboto', sans-serif;    
@@ -127,5 +120,57 @@
   .search-logo {
     margin-bottom: 100px;
   }
+
+  /* sidebar */
+  .sidenav {
+    height: 50%;
+    width: 0;
+    position: fixed;
+    border-radius: 1%;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    background-color: #3E79D2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  #main {
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidenav a {
+    padding-right: 2rem;
+    padding-top: 1rem;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+#card-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#home-btn {
+  margin-top: 1.5rem;
+}
+
+.sidenav .closebtn {
+  padding-top: 1.65rem;
+  position: absolute;
+  top: 0;
+  right: 0.7px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
   
