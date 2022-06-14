@@ -39,34 +39,92 @@
     background-color: #701DA4;
 }
 
-.header-box {
+.header-container {
     background-color: #701da4;
     display: grid;
-    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     height: 100px;
     width: 100%;
     align-items: center;
-    grid-template-areas: "logo title navigation side";
+    grid-template-areas: "left right";
     border-bottom-style: solid;
     border-bottom-width: 6px;
     border-bottom-color: #3f84ec;
   }
 
+  .box {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  #left {
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+
+  #right {
+    justify-content: end;
+    gap: 5rem;
+  }
+
   .icon {
     border-radius: 70px;
     height: 80px;
+    margin-left: 2rem;
   }
 
-  .name {
+  h3 {
     color: white;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
   }
 
-  .motto {
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
+  h3.motto {
     font-size: large;
   }
+
+  #main {
+    background-color: #701DA4;
+    border-top: 0;
+    border: none;
+    height: 80px;
+    margin-right: 2rem;
+  }
+
+  .bar {
+    font-family: 'Roboto', sans-serif;    
+    font-style: italic;
+    font-size: 18px;
+    line-height: 21px;
+    font-size: 1rem;
+    margin: 0 0.5rem 0 0.5rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #ffffff;
+  }
+  
+  #form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-left: 5rem;
+  }
+  
+  .magnify {
+    border-style: none;
+    background-color: #ffffff;
+    height: 20px;
+  }
+
+  .search-logo {
+    margin-bottom: 100px;
+  }
+  

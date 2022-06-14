@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css', _external=True) }}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% block title %}<title>Layout</title>{% endblock %}
     {% endblock %}
@@ -18,16 +18,25 @@
 <body>
     <div class="header">
         {% block header %}
-        <div class="header-box">
-            <img src="static/logo.jpg" alt="Logo" class="icon" />
-            <div class="header-text">
-                <h3 class="name">Salisbury 6th Form College</h3>
-                <h3 class="motto">Aspiration &ensp; ∘ &ensp; Excellence &ensp; ∘ &ensp; Success</h3>
+        <div class="header-container">
+            <div class="box" id="left">
+                <img src="static/logo.jpg" alt="Logo" class="icon" />
+                <div class="header-text">
+                    <h3 class="name">Salisbury 6th Form College</h3>
+                    <h3 class="motto">Aspiration &ensp; ∘ &ensp; Excellence &ensp; ∘ &ensp; Success</h3>
+                </div>
             </div>
-            <div class="searchBar">
-                <SearchBar />
+            <div class="box" id="right">
+                <div class="searchBar">
+                    <form id="form" role="search">
+                        <button class="magnify"><img src="static/search.png" height="20px" class="search-logo"></button>
+                        <input class="bar" type="text" placeholder="Search..." />
+                        <div class="fa-solid fa-circle-xmark"></div>
+                    </form>
+                </div>
+                <button id="main"><img src="static/fa-bars.png" height="35px"></button>
             </div>
-            <button id="main" class="fa-light fa-bars" onclick=""> </button>
+            
         </div>
         {% endblock %}
     </div>
