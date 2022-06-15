@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css', _external=True) }}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% block title %}<title>Layout</title>{% endblock %}
     {% endblock %}
@@ -18,7 +18,36 @@
 <body>
     <div class="header">
         {% block header %}
-        
+        <div class="header-container">
+            <div class="box" id="left">
+                <img src="static/logo.jpg" alt="Logo" class="icon" />
+                <div class="header-text">
+                    <h3 class="name">Salisbury 6th Form College</h3>
+                    <h3 class="motto">Aspiration &ensp; <img class="square" src="static/square.png" height="4px"> &ensp; Excellence &ensp; <img class="square" src="static/square.png" height="4px"> &ensp; Success</h3>
+                </div>
+            </div>
+            <div class="box" id="right">
+                <div class="searchBar">
+                    <form id="form" role="search">
+                        <button class="magnify"><img src="static/search.png" height="20px" class="search-logo"></button>
+                        <input class="bar" type="text" placeholder="Search..." />
+                        <div class="fa-solid fa-circle-xmark"></div>
+                    </form>
+                </div>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="static/fa-bars.png" height="35px"></a>
+                    <span id="card-link"><a id="home-btn" href="/">Home</a></span>
+                    
+                    <span id="card-link"><a href="about-us">About Us</a></span>
+                    
+                    <span id="card-link"><a href="courses">Courses</a></span>
+                    
+                    <span id="card-link"><a href="bursary">Bursary</a></span>
+                    
+                  </div>
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="main"><img src="static/fa-bars.png" height="35px"></span>                  
+            </div>
+        </div>
         {% endblock %}
     </div>
     <div class="content">{% block content %}{% endblock %}</div>
@@ -32,9 +61,19 @@
         </section>
         <section class="right">
             <p>66-78 Tollgate Road, Salisbury, SP1 2JJ</p>
-            <img class="image" src={{ url_for('static', filename='location.png', _external=True) }} alt="" width="auto" height="120px">
+            <img class="image" src="static/location.png" alt="" width="auto" height="160px">
         </section>
         {% endblock %}
     </div>
 </body>
 </html>
+
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
