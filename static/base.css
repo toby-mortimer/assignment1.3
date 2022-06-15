@@ -7,6 +7,58 @@
     grid-template-rows: 100%;
     grid-template-areas: "left right";
 }
+
+@media screen and (max-width: 730px) {
+  .image {
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .image {
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  #contact {
+    font-size: 20px;
+  }
+  #details {
+    font-size: 15px;
+  }
+  .right {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  #contact {
+    font-size: 18px;
+  }
+  #details {
+    font-size: 12px;
+  }
+  .right {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 542px) {
+  #contact {
+    font-size: 16px;
+  }
+  #details {
+    font-size: 10px;
+  }
+  .right {
+    font-size: 10px;
+  }
+  .image {
+    height: 90px;
+  }
+}
+
 /* footer - left section */
 .left {
     display: flex;
@@ -199,7 +251,7 @@
 
   /* sidebar */
   .sidenav {
-    height: 55%;
+    height: 60vh;
     width: 0;
     position: fixed;
     border-radius: 1%;
