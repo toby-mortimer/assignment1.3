@@ -150,7 +150,7 @@ for course in myList:
 
 # print(myList[0])
 
-#print(myList)
+# print(myList)
 
 # for course in myList:
 #     print(course)
@@ -158,4 +158,3 @@ for course in myList:
 
 # r = requests.post('http://127.0.0.1:/course', myList)
 # print(f"Status Code: {r.status_code}, Response: {r.json()}")
-
