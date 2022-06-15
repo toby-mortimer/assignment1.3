@@ -9,62 +9,59 @@
 
 {% block content %}
 <div class="body">
-    <div class="gallery">
-        <!--Slider Starts-->
-        <div class="slider">
-            <div class="slides">
-                <!--Radio Buttons Start-->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!--Radio Buttons End-->
-                <!--Slide Images Start-->
-                <div class="slide first">
-                    <img src="../static/386-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" alt="image1">
-                </div>
-                <div class="slide">
-                    <img src="../static/304-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" alt="image2">
-                </div>
-                <div class="slide">
-                    <img src="../static/380-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" alt="image3">
-                </div>
-                <div class="slide">
-                    <img src="../static/422-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" alt="image4">
-                </div>
-                <!--Slide Images End-->
-                <!--Automatic Navigation Start-->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-                <!--Automatic Navigation End-->
+    <!--Slider Starts-->
+    <div class="slider">
+        <div class="slides">
+            <!--Radio Buttons Start-->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!--Radio Buttons End-->
+            <!--Slide Images Start-->
+            <div class="slide first">
+                <img src="../static/386-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" height="700px" alt="image1">
             </div>
-            <!--Manual Navigation Start-->
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+            <div class="slide">
+                <img src="../static/304-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" height="700px" alt="image2">
             </div>
-            <!--Manual Navigation End-->
+            <div class="slide">
+                <img src="../static/380-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" height="700px" alt="image3">
+            </div>
+            <div class="slide">
+                <img src="../static/422-17thSept2019-MLP-S6C-Photo-by-Ash-Mills-2048x1536.jpg" height="700px" alt="image4">
+            </div>
+            <!--Slide Images End-->
+            <!--Automatic Navigation Start-->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+            <!--Automatic Navigation End-->
         </div>
-        <!--Slider Ends-->
-
-        <script type="text/javascript">
-            var counter = 1;
-            setInterval(function(){
-                document.getElementById('radio' + counter).checked = true;
-                counter++;
-                if (counter > 4){
-                    counter = 1;
-                }
-            }, 5000);
-        </script>
-
+        <!--Manual Navigation Start-->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!--Manual Navigation End-->
     </div>
+    <!--Slider Ends-->
+
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4){
+                counter = 1;
+            }
+        }, 3000);
+    </script>
     <div class="text">
         <p class="text">We firmly believe that S6C offers you the ideal college environment to embark on the next stage of your education.  With a vibrant and friendly atmosphere and positive relationships promoted at all times, you will find that S6C is an exciting place to develop and one in which you will thrive both academically and socially.</p>
     </div>

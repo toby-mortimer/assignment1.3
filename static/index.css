@@ -70,6 +70,7 @@ h1.page-title {
     border-color: black;
     border-style: solid;
     height: 1213px;
+    margin-bottom: 2rem;
 }
 
 .ln-card {
@@ -171,6 +172,7 @@ a:hover {
     border-radius: 10px;
     margin: 20px;
     overflow: hidden;
+    margin-left: 350px;
 }
 
 .slides {
