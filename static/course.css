@@ -5,7 +5,7 @@
 
 .top-part {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 100%;
     height: 150px;
     width: 100%;
@@ -53,4 +53,56 @@
 
 #sqr {
     margin-top: 10px;
+}
+
+.course-card {
+    display: grid;
+    height: 300px;
+    width: 510px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    border-radius: 10px;
+    margin-left: 2rem;
+    box-shadow: 3px 6px 6px 1px #888383;
+}
+
+.course-img {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+#desc {
+    margin-left: 1rem;
+}
+
+.key-tags {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+h1.card-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 35px;
+    margin-bottom: 0;
+}
+
+h2.card-sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 25px;
+    margin-bottom: 0.7rem;
+}
+
+p.description {
+    font-family: 'Ruda', sans-serif;
+    color: black;
+}
+
+.row {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
