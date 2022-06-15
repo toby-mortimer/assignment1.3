@@ -13,7 +13,7 @@ def courses():
     return render_template('course.html')
 
 
-@app.route("/aboutus")
+@app.route("/about-us")
 def about_us():
     return render_template('about-us.html')
 

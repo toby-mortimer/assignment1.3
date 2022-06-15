@@ -59,6 +59,21 @@
   }
 }
 
+@media screen and (max-width: 398px) {
+  #contact {
+    font-size: 13px;
+  }
+  #details {
+    font-size: 8px;
+  }
+  .right {
+    font-size: 8px;
+  }
+  .image {
+    height: 70px;
+  }
+}
+
 /* footer - left section */
 .left {
     display: flex;
@@ -131,35 +146,44 @@
   h3 {
     color: white;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
   }
 /* making the font-size of motto smaller */
   h3.motto {
     font-size: large;
+    font-weight: 400;
   }
 
-  @media screen and (max-width: 1025px) {
+  h3.name {
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1087px) {
     h3.motto {
       font-size: medium;
     }
     h3.name {
-      font-size: larger;
+      font-size: 20px;
     }
-    
+    #left {
+      gap: 1.5rem;
+    }
   }
 
-  @media screen and (max-width: 907px) {
+  @media screen and (max-width: 922px) {
     h3.name {
-      font-size: 22px;
+      font-size: larger;
     }
     h3.motto {
-      font-size: 15px;
+      font-size: 13px;
+    }
+    #left {
+      gap: 1rem;
     }
   }
 
   @media screen and (max-width: 886px) {
     h3.name {
-      font-size: larger;
+      font-size: 18px;
     }
     h3.motto {
       font-size: 13px;
@@ -179,12 +203,12 @@
     }
   }
 
-  @media screen and (max-width: 725px) {
+  @media screen and (max-width: 789px) {
     h3.name {
-      font-size: medium;
+      font-size: 15px;
     }
     h3.motto {
-      font-size: 10px;
+      font-size: 9px;
     }
     #left {
       justify-content: flex-start;
@@ -203,14 +227,40 @@
       justify-content: flex-start;
       gap: 1rem;
     }
+    .icon {
+      margin-left: 1.5rem;
+      height: 60px;
+    }
   }
 
   @media screen and (max-width: 604px) {
+    .fabars {
+      height: 30px;
+    }
+    .icon {
+      margin-left: 1rem;
+    }
+    h3.name {
+      font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 517px) {
+    
+    .fabars {
+      height: 25px;
+    }
+  }
+
+  @media screen and (max-width: 485px) {
     h3.name {
       display: none;
     }
     h3.motto {
       display: none;
+    }
+    #form {
+      width: 5%;
     }
   }
 
@@ -300,5 +350,7 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
 
   
