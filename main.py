@@ -17,6 +17,10 @@ def courses():
 def about_us():
     return render_template('about-us.html')
 
+@app.route("/carousel")
+def carousel():
+    return render_template('carousel-test.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
