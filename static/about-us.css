@@ -6,16 +6,21 @@
 
 .container {
     display: grid;
-    grid-template-rows: 100vw;
-    grid-template-columns: 70vh 30vh;
+    grid-template-rows: 100vh;
+    grid-template-columns: 60vw 40vw;
     grid-template-areas: 
     "left right";
 }
 
 .left {
-
+    grid-area: left;
 }
 
 .right {
-    
+    grid-area: right;
+}
+
+.image {
+    width: 80%;
+    height: auto;
 }
