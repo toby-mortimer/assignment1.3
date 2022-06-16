@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css', _external=True) }}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% block title %}<title>Layout</title>{% endblock %}
     {% endblock %}
@@ -21,7 +21,7 @@
         <div class="header-container">
             <div class="box-container">
                 <div class="box" id="left">
-                    <img src="static/logo.jpg" alt="Logo" class="icon" />
+                    <a class="nav-link" href="/"><img src="static/logo.jpg" alt="Logo" class="icon" /></a>
                     <div class="header-text">
                         <h3 class="name">Salisbury 6th Form College</h3>
                         <h3 class="motto">Aspiration &ensp; <img class="square" src="static/square.png" height="4px"> &ensp; Excellence &ensp; <img class="square" src="static/square.png" height="4px"> &ensp; Success</h3>
@@ -50,19 +50,19 @@
                     <span id="card-link"><a href="bursary">Bursary</a></span>
                     
                   </div>
-                  <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="main"><img src="static/fa-bars.png" height="35px"></span>                  
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()" id="main"><img src="static/fa-bars.png" class="fabars" height="35px"></span>                  
             </div>
         </div>
         {% endblock %}
     </div>
-    <div class="content">{% block content %}{% endblock %}</div>
+    {% block content %}{% endblock %}
     <div class="footer">
         {% block footer %}
         <section class="left">
-            <h3>Contact Us:</h3>
-            <p>Call 70608929607</p>
-            <p>Email s6c@s6c.mlp.college</p>
-            <p>Contact Form</p>
+            <h3 id="contact">Contact Us:</h3>
+            <p id="details">Call 70608929607</p>
+            <p id="details">Email s6c@s6c.mlp.college</p>
+            <p id="details">Contact Form</p>
         </section>
         <section class="right">
             <p>66-78 Tollgate Road, Salisbury, SP1 2JJ</p>

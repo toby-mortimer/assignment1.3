@@ -1,1 +1,50 @@
-<h1>HI :(</h1>
+{% extends 'base.html' %} 
+
+{% block head %}
+{{ super() }}
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Ruda:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='course.css', _external=True) }}"/>
+<title>{% block title %}{% endblock %}Courses</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="top-part">
+        <div class="wrapper" id="key">
+            <div class="keys">
+                <h3 class="sub-keys">Physical</h3>
+                <img id="sqr" src="static/blue.png" height="10px">
+                <h3 class="sub-keys">Creative</h3>
+                <img id="sqr" src="static/purple.png" height="10px">
+                <h3 class="sub-keys">Business</h3>
+                <img id="sqr" src="static/yellow.png" height="10px">
+                <h3 class="sub-keys">Science</h3>
+                <img id="sqr" src="static/red.png" height="10px">
+            </div>
+        </div>
+        <div class="wrapper" id="head-title">
+            <div>
+                <h1 class="title-heading">S6C Courses</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="course-card">
+                <div class="grid">
+                    <img class="course-img" src="static/applied.png">
+                </div>
+                <div class="grid" id="desc">
+                    <img src="static/key-blue.png" class="key-tags" height="30px">
+                    <h1 class="card-title">APPLIED SCIENCE</h1>
+                    <h2 class="card-sub">CTEC</h2>
+                    <p class="description">The Cambridge Technical in Applied Science is a predominantly
+                        practical subject which will develop your practical skills ready for
+                        a career in science.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
