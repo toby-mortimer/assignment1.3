@@ -14,13 +14,13 @@
         <div class="wrapper" id="key">
             <div class="keys">
                 <h3 class="sub-keys">Physical</h3>
-                <img id="sqr" src="static/blue.png" height="10px">
+                <img id="sqr" src="static/blue.png" height="13px">
                 <h3 class="sub-keys">Creative</h3>
-                <img id="sqr" src="static/purple.png" height="10px">
+                <img id="sqr" src="static/yellow.png" height="13px">
                 <h3 class="sub-keys">Business</h3>
-                <img id="sqr" src="static/yellow.png" height="10px">
+                <img id="sqr" src="static/purple.png" height="13px">
                 <h3 class="sub-keys">Science</h3>
-                <img id="sqr" src="static/red.png" height="10px">
+                <img id="sqr" src="static/red.png" height="13px">
             </div>
         </div>
         <div class="wrapper" id="head-title">
@@ -29,14 +29,14 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="across">
+        <a href="/" class="course-link">
             <div class="course-card">
                 <div class="grid">
                     <img class="course-img" src="static/applied.png">
                 </div>
                 <div class="grid" id="desc">
-                    <img src="static/key-blue.png" class="key-tags" height="30px">
+                    <div class="key-science" id="tags"></div>
                     <h1 class="card-title">APPLIED SCIENCE</h1>
                     <h2 class="card-sub">CTEC</h2>
                     <p class="description">The Cambridge Technical in Applied Science is a predominantly
@@ -44,7 +44,40 @@
                         a career in science.</p>
                 </div>
             </div>
-        </div>
+        </a>
+        
+        <a class="course-link" href="/">
+            <div class="course-card">
+                <div class="grid">
+                    <img class="course-img" src="static/bio.png">
+                </div>
+                <div class="grid" id="desc">
+                    <div class="key-science" id="tags"></div>                    
+                    <h1 class="card-title">BIOLOGY</h1>
+                    <h2 class="card-sub">A-level</h2>
+                    <p class="description">Biology is arguably the most exciting and one of the fastest
+                        developing areas of science today. It impacts on everyone’s lives
+                        and holds out hope to remedy some of our most pressing issues.</p>
+                </div>
+            </div>
+        </a>
+        <a href="/" class="course-link">
+            <div class="course-card">
+                <div class="grid">
+                    <img class="course-img" src="static/business-ALEVEL.png">
+                </div>
+                <div class="grid" id="desc">
+                    <div class="key-business" id="tags"></div>
+                    <h1 class="card-title">BUSINESS</h1>
+                    <h2 class="card-sub">A-level</h2>
+                    <p class="description">Business A Level covers all aspects of business from start-up
+                        enterprises to the purpose of different functions within an
+                        organisation.</p>
+                </div>
+            </div>
+        </a>
+        
+        
     </div>
 </div>
 {% endblock %}

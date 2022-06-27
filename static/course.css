@@ -10,6 +10,7 @@
     height: 150px;
     width: 100%;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 .wrapper {
@@ -22,7 +23,7 @@
 .title-heading {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
-    font-size: 60px;
+    font-size: 65px;
     letter-spacing: 2px;
     color: #3E79D2;
 }
@@ -52,40 +53,73 @@
 }
 
 #sqr {
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 .course-card {
     display: grid;
-    height: 300px;
-    width: 510px;
+    height: 270px;
+    width: 430px;
     grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
     border-radius: 10px;
-    margin-left: 2rem;
+    margin-bottom: 2rem;
     box-shadow: 3px 6px 6px 1px #888383;
 }
 
+@media screen and (max-width: 1440px) {
+    
+}
+
+.course-link {
+    transition: all 0.35s ease-in-out;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.course-link:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
 .course-img {
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
+    height: 270px;
+    width: 160px;
+    border-radius: 10px 0 0 10px;
 }
 
-#desc {
-    margin-left: 1rem;
+#desc{
+    margin-left: 0.3rem;
+    padding-right: 0.6rem;
+    font-size: 10px;
 }
 
-.key-tags {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+#tags {
+    height: 30px;
+    width: 84px;
+    margin-top: 0.8rem;
+    margin-left: 10.574rem;
+    margin-bottom: 0.4rem;
+    border-radius: 7px 0 0 7px;
+}
+
+.key-science {
+    background-color: #53B8E4;
+    
+}
+
+.key-business {
+    background-color: #BE53E4;
 }
 
 h1.card-title {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     color: black;
-    font-size: 35px;
+    font-size: 32px;
     margin-bottom: 0;
 }
 
@@ -93,16 +127,34 @@ h2.card-sub {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: black;
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom: 0.7rem;
 }
 
 p.description {
     font-family: 'Ruda', sans-serif;
     color: black;
+    font-size: 14.5px;
 }
 
-.row {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.across {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .across {
+        flex-shrink: 2;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .across {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
