@@ -17,6 +17,10 @@ def courses():
 def about_us():
     return render_template('about-us.html')
 
+@app.route("/courses/applied-science")
+def applied():
+    return render_template('applied.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
