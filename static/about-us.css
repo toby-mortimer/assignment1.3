@@ -12,15 +12,38 @@
     "left right";
 }
 
-.left {
+.text {
     grid-area: left;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
 }
 
 .right {
     grid-area: right;
+    
 }
 
-.image {
-    width: 80%;
-    height: auto;
+.swiper {
+    width: 60%;
+    height: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: absolute;
+
+}
+
+#image {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-self: center;   
 }
