@@ -1,4 +1,9 @@
 
+.container-fluid {
+    padding-left: 5rem;
+    padding-right: 3rem;
+}
+
 .top-part {
     display: grid;
     grid-template-columns: 35% 65%;
@@ -52,6 +57,10 @@
     margin-top: 7px;
 }
 
+.col {
+    gap: 2rem;
+}
+
 .course-card {
     display: grid;
     height: 270px;
@@ -63,6 +72,12 @@
     box-shadow: 3px 6px 6px 1px #888383;
     transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 600px) {
+    .course-card {
+       width: 100%;
+    }
+ }
   
 a:link {
     text-decoration: none;
