@@ -1,17 +1,29 @@
-
 .container-fluid {
-    padding-left: 5rem;
-    padding-right: 3rem;
+    padding-left: 6rem;
+    padding-right: 4rem;
 }
 
 .top-part {
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 30% 70%;
     grid-template-rows: 100%;
     height: 150px;
     width: 100%;
     align-items: center;
     margin-bottom: 1rem;
+    column-gap: 2rem;
+}
+
+@media screen and (max-width: 1099px) {
+    .top-part {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 905px) {
+    h1.title-heading {
+        display: none;
+    }
 }
 
 .wrapper {
@@ -61,23 +73,26 @@
     gap: 2rem;
 }
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 470px);
+    justify-content: center;
+}
+
 .course-card {
     display: grid;
     height: 270px;
     width: 430px;
+    max-width: 100%;
     grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
+    overflow: hidden;
+    position: relative;
     border-radius: 10px;
     margin-bottom: 2rem;
     box-shadow: 3px 6px 6px 1px #888383;
     transition: all 0.3s ease-in-out;
 }
-
-@media screen and (max-width: 600px) {
-    .course-card {
-       width: 100%;
-    }
- }
   
 a:link {
     text-decoration: none;
@@ -91,23 +106,31 @@ a:link {
 
 .course-img {
     height: 270px;
-    width: 160px;
+    width: 100%;
     border-radius: 10px 0 0 10px;
 }
 
 #desc{
-    margin-left: 0.3rem;
-    padding-right: 0.6rem;
-    font-size: 10px;
+    padding-left: 0.6rem;
+    padding-bottom: 2rem;
+    width: 95%;
+    height: 100%;
 }
 
 #tags {
     height: 30px;
     width: 84px;
     margin-top: 0.8rem;
-    margin-left: 10.574rem;
     margin-bottom: 0.4rem;
     border-radius: 7px 0 0 7px;
+}
+
+.t-wrap {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .key-science {
@@ -123,7 +146,7 @@ a:link {
     background-color: #E4AA53;
 }
 
-h1.card-title {
+.card-title {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     color: black;
@@ -131,7 +154,7 @@ h1.card-title {
     margin-bottom: 0;
 }
 
-h2.card-sub {
+.card-sub {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: black;
