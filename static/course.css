@@ -61,17 +61,14 @@
     border-radius: 10px;
     margin-bottom: 2rem;
     box-shadow: 3px 6px 6px 1px #888383;
+    transition: all 0.3s ease-in-out;
 }
   
-.course-link {
-    transition: all 0.35s ease-in-out;
-}
-
 a:link {
     text-decoration: none;
 }
 
-.course-link:hover {
+.course-card:hover {
     text-decoration: none;
     transform: scale(1.05);
     transition: 0.5s;
