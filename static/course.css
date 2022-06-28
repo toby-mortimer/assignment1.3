@@ -114,6 +114,12 @@
         padding-right: 0.5rem;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
   
 a:link {
     text-decoration: none;

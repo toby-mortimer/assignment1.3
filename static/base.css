@@ -267,6 +267,11 @@
       width: 5%;
     }
   }
+  @media screen and (max-width: 330px) {
+    .searchBar {
+      display: none;
+    }
+  }
 
 /* form of the searchbar */
   .bar {
