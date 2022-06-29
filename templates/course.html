@@ -31,121 +31,29 @@
     </div>
         
       <div class="cards">
+        {% for course in courses %}
             <div class="col mb-4">
-                <a href="/applied-science" class="course-link">
-                    <div class="course-card">
-                        <div class="grid">
-                            <img class="course-img" src="static/applied.png">
+                <div class="course-card">
+                    <div class="grid">
+                        <img class="course-img" src="static/applied.png">
+                    </div>
+                    <div class="grid" id="text">
+                        <div class="t-wrap">
+                            <div class="key-science" id="tags"></div>
                         </div>
-                        <div class="grid" id="text">
-                            <div class="t-wrap">
-                                <div class="key-science" id="tags"></div>
-                            </div>
-                            <div class="desc-wrap" id="desc">
-                                <h1 class="card-title">APPLIED SCIENCE</h1>
-                                <h2 class="card-sub">CTEC</h2>
-                                <p class="description">The Cambridge Technical in Applied Science is a predominantly
-                                    practical subject which will develop your practical skills ready for
-                                    a career in science.</p>
-                            </div>
+                        <div class="desc-wrap" id="desc">
+                            <h1 class="card-title">{{ course.title.upper() }}</h1>
+                            <h2 class="card-sub">{{ course.type }}</h2>
+                            {% if course.description|length <= 150 %}
+                            <p class="description">{{ course.description }}</p>
+                            {% else %}
+                            <p class="description">{{ course.description[:150] + "..." }}</p>
+                            {% endif %}
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-
-            <div class="col mb-4">
-                <a href="/" class="course-link">
-                    <div class="course-card">
-                        <div class="grid">
-                            <img class="course-img" src="static/bio.png">
-                        </div>
-                        <div class="grid" id="text">
-                            <div class="t-wrap">
-                                <div class="key-science" id="tags"></div>
-                            </div>
-                            <div class="desc-wrap" id="desc">
-                                <h1 class="card-title">BIOLOGY</h1>
-                                <h2 class="card-sub">A-level</h2>
-                                <p class="description">Biology is arguably the most exciting and one of the fastest
-                                    developing areas of science today. It impacts on everyone’s lives
-                                    and holds out hope to remedy some of our most pressing issues.</p>
-                            </div>               
-                            
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col mb-4">
-                <a href="/" class="course-link">
-                    <div class="course-card">
-                        <div class="grid">
-                            <img class="course-img" src="static/business-ALEVEL.png">
-                        </div>
-                        <div class="grid" id="text">
-                            <div class="t-wrap">
-                                <div class="key-business" id="tags"></div>
-                            </div>
-                            <div class="desc-wrap" id="desc">
-                                <h1 class="card-title">BUSINESS</h1>
-                                <h2 class="card-sub">A-level</h2>
-                                <p class="description">Business A Level covers all aspects of business from start-up
-                                    enterprises to the purpose of different functions within an
-                                    organisation.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col mb-4">
-                <a href="/" class="course-link">
-                    <div class="course-card">
-                        <div class="grid">
-                            <img class="course-img" src="static/chem.png">
-                        </div>
-                        <div class="grid" id="text">
-                            <div class="t-wrap">
-                                <div class="key-business" id="tags"></div>
-                            </div>
-                            <div class="desc-wrap" id="desc">
-                                <h1 class="card-title">CHEMISTRY</h1>
-                                <h2 class="card-sub">A-level</h2>
-                                <p class="description">At A Level you will build on the Chemistry you have studied at
-                                    GCSE, and in some cases you will understand for the first time
-                                    why reactions happen. You will study the building blocks of life
-                                    itself.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="col mb-4">
-                <a href="/" class="course-link">
-                    <div class="course-card">
-                        <div class="grid">
-                            <img class="course-img" src="static/software.png">
-                        </div>
-                        <div class="grid" id="text">
-                            <div class="t-wrap">
-                                <div class="key-creative" id="tags"></div>
-                            </div>
-                            <div class="desc-wrap" id="desc">
-                                <h1 class="card-title">SOFTWARE DESIGN</h1>
-                                <h2 class="card-sub">BTEC</h2>
-                                <p class="description">This course provides a foundation to all aspects of software
-                                design and programming, with a strong bias to practical study
-                                that reflects how industry works.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </a>
-            </div>
-
+        {% endfor %}
         </div>
         
     
