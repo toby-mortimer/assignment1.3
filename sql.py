@@ -32,8 +32,10 @@ class Courses(db.Model):
     description = db.Column(db.String(500))
     testimonials = db.Column(db.String(500))
     exam_details = db.Column(db.String(100))
+    tags = db.Column(db.String(30))
+    images = db.Column(db.String(50))
 
-    def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails):
+    def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails, tags, images):
         self.title = title
         self.type = type
         self.teacher_info = teacherinfo
@@ -43,6 +45,8 @@ class Courses(db.Model):
         self.description = description
         self.testimonials = testimonials
         self.exam_details = examdetails
+        self.tags = tags
+        self.images = images
 
 # creates the schema for marshmallow to use
 
@@ -50,7 +54,7 @@ class Courses(db.Model):
 class CoursesSchema(ma.Schema):
     class Meta:
         fields = ('id', 'title', 'type', 'teacher_info', 'requirements',
-                  'ucas_points', 'topics', 'description', 'testimonials', 'exam_details')
+                  'ucas_points', 'topics', 'description', 'testimonials', 'exam_details', 'tags', 'images')
 
 
 # creates an instance of the schema
@@ -72,9 +76,11 @@ def add_course():
     description = request.json['description']
     testimonials = request.json['testimonials']
     exam_details = request.json['exam_details']
+    tags = request.json['tags']
+    images = request.json['images']
 
     new_course = Courses(title, type, teacher_info, requirements,
-                         ucas_points, topics, description, testimonials, exam_details)
+                         ucas_points, topics, description, testimonials, exam_details, tags, images)
     db.session.add(new_course)
     db.session.commit()
 
@@ -109,6 +115,8 @@ def update_course(id):
     description = request.json['description']
     testimonials = request.json['testimonials']
     examdetails = request.json['exam_details']
+    tags = request.json['tags']
+    images = request.json['images']
 
     course.title = title
     course.type = type
@@ -119,6 +127,8 @@ def update_course(id):
     course.description = description
     course.testimonials = testimonials
     course.exam_details = examdetails
+    course.tags = tags
+    course.images = images
 
     db.session.commit()
     return course_schema.jsonify(course)
