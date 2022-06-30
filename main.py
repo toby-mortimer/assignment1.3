@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from requests import get
 
 app = Flask(__name__)
 
@@ -17,10 +18,16 @@ def courses():
 def about_us():
     return render_template('about-us.html')
 
-@app.route("/applied-science")
-def applied():
-    return render_template('applied.html')
 
+@app.route("/courses/applied-science")
+def applied():
+    course = get("http://localhost:5000/course/2").json()
+    return render_template('applied.html', description=course["descriptions"])
+
+
+@app.route("/bursary")
+def bursary():
+    return render_template
 
 
 if __name__ == '__main__':
