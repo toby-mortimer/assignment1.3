@@ -33,25 +33,36 @@
       <div class="cards">
         {% for course in courses %}
             <div class="col mb-4">
-                <div class="course-card">
-                    <div class="grid">
-                        <img class="course-img" src="static/applied.png">
-                    </div>
-                    <div class="grid" id="text">
-                        <div class="t-wrap">
-                            <div class="key-science" id="tags"></div>
+                <a href="/applied-science">
+                    <div class="course-card">
+                        <div class="grid">
+                            <img class="course-img" src = {{ course.images }}>
                         </div>
-                        <div class="desc-wrap" id="desc">
-                            <h1 class="card-title">{{ course.title.upper() }}</h1>
-                            <h2 class="card-sub">{{ course.type }}</h2>
-                            {% if course.description|length <= 150 %}
-                            <p class="description">{{ course.description }}</p>
-                            {% else %}
-                            <p class="description">{{ course.description[:150] + "..." }}</p>
-                            {% endif %}
+                        <div class="grid" id="text">
+                            <div class="t-wrap">
+                                {% if course.tags == 'Science' %}
+                                <div class="key-science" id="tags"></div>
+                                {%  elif course.tags == 'Creative' %}
+                                <div class="key-creative" id="tags"></div>
+                                {% elif course.tags == 'Physical' %}
+                                <div class="key-physical" id="tags"></div>
+                                {% else %}
+                                <div class="key-business" id="tags"></div>
+                                {% endif %}
+                            </div>
+                            <div class="desc-wrap" id="desc">
+                                <h1 class="card-title">{{ course.title.upper() }}</h1>
+                                <h2 class="card-sub">{{ course.type }}</h2>
+                                {% if course.description|length <= 150 %}
+                                <p class="description">{{ course.description }}</p>
+                                {% else %}
+                                <p class="description">{{ course.description[:150] + "..." }}</p>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+                
             </div>
         {% endfor %}
         </div>

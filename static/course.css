@@ -164,6 +164,7 @@ a:link {
 }
 
 .course-img {
+    object-fit: cover;
     height: 100%;
     width: 100%;
     border-radius: 10px 0 0 10px;
@@ -194,7 +195,6 @@ a:link {
 
 .key-science {
     background-color: #53B8E4;
-    
 }
 
 .key-business {
@@ -203,6 +203,10 @@ a:link {
 
 .key-creative {
     background-color: #E4AA53;
+}
+
+.key-physical {
+    background-color: #E55C56;
 }
 
 .card-title {

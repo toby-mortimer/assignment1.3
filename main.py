@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from requests import get
+from get_filedir import get_filepaths
 
 app = Flask(__name__, )
 
@@ -17,8 +18,9 @@ def index():
 
 @app.route("/courses")
 def courses():
+    course_images = get_filepaths("static/images")
     data = get("http://localhost:5000/course").json()
-    return render_template('course.html', courses = data)
+    return render_template('course.html', courses = data, images = course_images)
 
 @app.route("/about-us")
 def about_us():
