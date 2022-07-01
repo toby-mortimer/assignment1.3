@@ -1,9 +1,6 @@
 from flask import Flask, render_template
 from requests import get
-<<<<<<< HEAD
-=======
 from get_filedir import get_filepaths
->>>>>>> 137da6a19e2c3aa2283fb61805939e86b64a0d80
 
 app = Flask(__name__, )
 
