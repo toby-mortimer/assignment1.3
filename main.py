@@ -26,9 +26,12 @@ def courses():
 def about_us():
     return render_template('about-us.html')
 
-@app.route("/applied-science")
-def applied():
-    return render_template('applied.html', description="")
+@app.route("/courses/<id>")
+def get_course(id):
+    data = get(f"http://localhost:5000/course/{id}").json()
+    if data:
+        return render_template('individual-course.html', course = data)
+    return "Course not found", 404
 
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)
