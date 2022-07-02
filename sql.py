@@ -1,3 +1,4 @@
+from cmath import e
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -37,8 +38,13 @@ class Courses(db.Model):
     practicals = db.Column(db.String(10))
     testimonial_name = db.Column(db.String(50))
     exam_percentage = db.Column(db.Integer)
+    teacher_name = db.Column(db.String(30))
+    email = db.Column(db.String(30))
+    board = db.Column(db.String(20))
 
-    def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials, examdetails, tags, images, practicals, testimonial_name, exam_percentage):
+    def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials,
+                examdetails, tags, images, practicals, testimonial_name, exam_percentage, teacher_name, email,
+                board):
         self.title = title
         self.type = type
         self.teacher_info = teacherinfo
@@ -53,6 +59,9 @@ class Courses(db.Model):
         self.practicals = practicals
         self.testimonial_name = testimonial_name
         self.exam_percentage = exam_percentage
+        self.teacher_name = teacher_name
+        self.email = email
+        self.board = board
 
 # creates the schema for marshmallow to use
 
@@ -61,7 +70,8 @@ class CoursesSchema(ma.Schema):
     class Meta:
         fields = ('id', 'title', 'type', 'teacher_info', 'requirements',
                   'ucas_points', 'topics', 'description', 'testimonials', 'exam_details',
-                  'tags', 'images', 'practicals', 'testimonial_name', 'exam_percentage')
+                  'tags', 'images', 'practicals', 'testimonial_name', 'exam_percentage',
+                  'teacher_name', 'email', 'board')
 
 
 # creates an instance of the schema
@@ -88,10 +98,14 @@ def add_course():
     practicals = request.json['practicals']
     testimonial_name = request.json['testimonial_name']
     exam_percentage = request.json['exam_percentage']
+    teacher_name = request.json['teacher_name']
+    email = request.json['email']
+    board = request.json['board']
 
     new_course = Courses(title, type, teacher_info, requirements,
                          ucas_points, topics, description, testimonials,
-                         exam_details, tags, images, practicals, testimonial_name, exam_percentage)
+                         exam_details, tags, images, practicals, testimonial_name,
+                         exam_percentage, teacher_name, email, board)
     db.session.add(new_course)
     db.session.commit()
 
@@ -131,6 +145,9 @@ def update_course(id):
     practicals = request.json['practicals']
     testimonial_name = request.json['testimonial_name']
     exam_percentage = request.json['exam_percentage']
+    teacher_name = request.json['teacher_name']
+    email = request.json['email']
+    board = request.json['board']
 
     course.title = title
     course.type = type
@@ -146,6 +163,9 @@ def update_course(id):
     course.practicals = practicals
     course.testimonial_name = testimonial_name
     course.exam_percentage = exam_percentage
+    course.teacher_name = teacher_name
+    course.email = email
+    course.board = board
 
     db.session.commit()
     return course_schema.jsonify(course)
