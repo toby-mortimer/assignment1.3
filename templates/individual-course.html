@@ -48,6 +48,12 @@
             <div class="card-item">
                 {% if course.board == "Edexcel" %}
                 <img class="card-title" src="/static/edexcel-vector-logo-removebg-preview.png" height="80px">
+                {% elif course.board == "OCR" %}
+                <img class="card-title" src="/static/ocr-logo-png-transparent.png" height="150px" style="padding-bottom: 4rem;">
+                {% elif course.board == "Pearson" %}
+                <img class="card-title" src="/static/1280px-Pearson_logo.svg.png" height="50px" style="margin-top: 0.7rem;">
+                {% else %}
+                <img class="card-title" src="/static/AQA_GCSE_English_Language_and_Literature_Resources-removebg-preview.png" height="80px">
                 {% endif %}
                 <h5 class="requo">
                     {{ course.ucas_points}}
