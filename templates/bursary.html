@@ -3,36 +3,75 @@
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='bursary.css', _external=True) }}"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<title>{% block title %}{% endblock %}About Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>{% block title %}{% endblock %}Bursary</title>
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
-    <div class="left">
-        <h2>What is it?</h2>
-        <p>
-            The Vulnerable Bursary is a grant of up to £1,200 for students who may have difficulties 
-            in completing their course because of financial considerations.
-        </p>
-        <h2>Requirements</h2>
-        <p>
-            - Young people in care, including unaccompanied asylum seeking children Care Leavers<b>
-            - Young people in receipt of Income Support or Universal Credit<b>
-            - Young people in receipt of both Disability Living Allowance (or the new Personal Independence<b>
-            Payments) and Employment Support Allowance (ESA, or Universal Credit as a replacement for ESA) in their own right.
-        </p>
+<div class="container-fluid">
+    <div class="bursary-row">
+        <div class="bursary-one">
+            <div class="circle">
+                <div id="text">
+                    <h1 class="title">BURSARY 1</h1>
+                    <hr class="line">
+                    <h2 class="subtitle">VULNERABLE</h2>
+                </div>
+            </div>
+            <div class="first-card border-0">
+                <h1 class="heading">What is it?</h1>
+                <p class="description">The Vulnerable Bursary is a grant of up to £1,200 for students who may have difficulties in completing their course because of financial considerations.</p>
+            </div>
+            <div class="second-card border-0">
+                <h1 class="heading">Requirements</h1>
+                <p class="description">
+                    <ul>
+                        <li>Young people in care, including unaccompanied asylum seeking children</li>
+                        <li>Care Leavers</li>
+                        <li>Young people in receipt of Income Support or Universal Credit</li>
+                        <li>Young people in receipt of both Disability Living Allowance (or the new Personal Independence Payments) and Employment Support Allowance (ESA, or Universal Credit as a replacement for ESA) in their own right.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="bursary-two">
+            <div class="circle">
+                <div id="text">
+                    <h1 class="title">BURSARY 2</h1>
+                    <hr class="line">
+                    <h2 class="subtitle">COLLEGE DISCRETIONARY</h2>
+                </div>
+            </div>
+            <div class="first-card border-0">
+                <h1 class="heading">What is it?</h1>
+                <p class="description">This is a bursary to cover costs associated with books, equipment, transport, meals, trips and visits where a student is identified as needing additional financial support. This is awarded at the discretion of the College.</p>
+            </div>
+            <div class="second-card border-0">
+                <h1 class="heading">Requirements</h1>
+                <p class="description">
+                    <ul>
+                        <li>Applicants aged under 19 on 31 August 2022</li>
+                        <li>Students from households where income is below £30,000</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="right">
-
+    <div class="third-card border-0">
+        <h1 class="heading">How to apply</h1>
+        <p class="description">If you think you are eligible for a bursary and would like to apply, you can either see the contact details below and send them a message or go straight to reception.<br></p>
+        <p class="description">Note: Each application for a discretionary bursary is individually assessed and there may be some flexibility based on an individual student’s circumstances. The bursary will usually be awarded as ‘benefit in kind’ e.g. the College will purchase the equipment/books or provide a voucher for a meal.</p>
     </div>
-    <div class="both">
-        <h2>How to apply?</h2>
-        <p>
-            If you think you are eligible for a bursary and would like to apply, you can either see the contact details below and send them a message or go straight to reception.<b>
-            Note: Each application for a discretionary bursary is individually assessed and there may be some flexibility based on an individual student’s circumstances. The bursary will 
-            usually be awarded as ‘benefit in kind’ e.g. the College will purchase the equipment/books or provide a voucher for a meal.
+    <div class="fourth-card border-0">
+        <h1 class="heading">Contact Information</h1>
+        <p class="description">
+            <ul>
+                <li>Call us 01722 597970</li>
+                <li>email office@salisbury6c.ac.uk</li>
+            </ul>
         </p>
     </div>
 </div>
+
+{% endblock %}
