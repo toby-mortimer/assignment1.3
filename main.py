@@ -19,7 +19,7 @@ def index():
 @app.route("/courses")
 def courses():
     course_images = get_filepaths("static/images")
-    data = get("http://localhost:5000/course").json()
+    data = get("http://localhost:5000/courses").json()
     return render_template('course.html', courses=data, images=course_images)
 
 
@@ -27,28 +27,19 @@ def courses():
 def about_us():
     return render_template('about-us.html')
 
-<<<<<<< HEAD
-=======
+
 @app.route("/courses/<id>")
 def get_course(id):
     data = get(f"http://localhost:5000/course/{id}").json()
     if data:
-        return render_template('individual-course.html', course = data)
+        return render_template('individual-course.html', course=data)
     return "Course not found", 404
->>>>>>> 3c396ada992afc7dd9868b2fc698f74c8c31acd8
+
 
 @app.route("/bursary")
 def bursary():
     return render_template('bursary.html')
 
-<<<<<<< HEAD
 
-@app.route("/courses/applied-science")
-def applied():
-    return render_template('applied.html', description="")
-
-
-=======
->>>>>>> 3c396ada992afc7dd9868b2fc698f74c8c31acd8
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)
