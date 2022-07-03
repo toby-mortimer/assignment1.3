@@ -64,9 +64,7 @@
                 <h5 class="requo">
                     {% set topics = course.topics.split(',') %}
                     {% for topic in topics %}
-                    {% if topic[0:7] %}
                     <li>{{ topic.title() }}</li>
-                    {% endif %}
                     {% endfor %}
                    
                 </h5>

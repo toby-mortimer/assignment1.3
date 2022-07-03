@@ -18,9 +18,8 @@ def index():
 
 @app.route("/courses")
 def courses():
-    course_images = get_filepaths("static/images")
     data = get("http://localhost:5000/course").json()
-    return render_template('course.html', courses = data, images = course_images)
+    return render_template('course.html', courses = data)
 
 @app.route("/about-us")
 def about_us():
