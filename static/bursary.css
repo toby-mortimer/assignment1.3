@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 70vh 30vh;
+    grid-template-areas: 
+    "left right"
+    "both both";
+}
+
+.text {
+    grid-area: left;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+h2 {
+    color: #3E79D2;
+}
+
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.both {
+    grid-area: both;
+}
