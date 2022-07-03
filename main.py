@@ -19,7 +19,7 @@ def index():
 @app.route("/courses")
 def courses():
     data = get("http://localhost:5000/course").json()
-    return render_template('course.html', courses=data)
+    return render_template('course.html', courses = data)
 
 
 @app.route("/about-us")
@@ -31,7 +31,7 @@ def about_us():
 def get_course(id):
     data = get(f"http://localhost:5000/course/{id}").json()
     if data:
-        return render_template('individual-course.html', course=data)
+        return render_template('individual-course.html', course = data)
     return "Course not found", 404
 
 

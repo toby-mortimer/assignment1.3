@@ -79,7 +79,7 @@ course_schema = CoursesSchema()  # single info
 Mcourse_schema = CoursesSchema(many=True)  # many info
 
 # C.R.U.D. operations for API
-# Creates a new person in the databse
+# Creates a new course in the databse
 
 
 @app.route('/course', methods=['POST'])
@@ -112,7 +112,7 @@ def add_course():
     return course_schema.jsonify(new_course)
 
 
-# Gets all people in the database
+# Gets all courses in the database
 @app.route('/course', methods=['GET'])
 def get_courses():
     all_course = Courses.query.all()
@@ -120,14 +120,14 @@ def get_courses():
     return jsonify(result)
 
 
-# Gets a single person by ID
+# Gets a single course by ID
 @app.route('/course/<id>', methods=['GET'])
 def get_course(id):
     course = Courses.query.get(id)
     return course_schema.jsonify(course)
 
 
-# Updates a person with the id
+# Updates a course with the id
 @app.route('/course/<id>', methods=['PUT'])
 def update_course(id):
     course = Courses.query.get(id)
@@ -171,7 +171,7 @@ def update_course(id):
     return course_schema.jsonify(course)
 
 
-# Deletes the person with the id
+# Deletes the course with the id
 @app.route('/course/<id>', methods=['DELETE'])
 def delete_course(id):
     course = Courses.query.get(id)
