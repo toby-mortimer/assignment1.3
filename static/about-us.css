@@ -7,7 +7,7 @@
 .container {
     display: grid;
     grid-template-rows: 20vh 60vh 20vh;
-    grid-template-columns: 60vw 40vw;
+    grid-template-columns: 60% 40%;
     grid-template-areas:
     "header header"
     "left right"
@@ -23,13 +23,14 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-weight: 300;
+
 }
 
 h2 {
     color: #3E79D2;
 }
 
-.right {
+.image {
     grid-area: right;
     background-color: white;
 }
