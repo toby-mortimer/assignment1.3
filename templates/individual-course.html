@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='applied.css', _external=True) }}"/>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Ruda:wght@500&display=swap" rel="stylesheet">
+<title>{% block title %}{% endblock %}{{ course.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div>
+        <h1 class="head">{{ course.title.upper() }}</h1>
+    </div>
+    <div class="wrap">
+        <div class="course-img">
+            <img id="pic" src="/static/images/{{ course.id }}.jpg">
+        </div>
+        <div class="cards">
+            <div class="card-item">
+                <h2 class="card-title">TEACHER INFO</h2>
+                <div class="t-info-grid">
+                    <div class="teach-img">
+                        <img class="staff-pic" src="/static/staff/headshot-placeholder.png">
+                    </div>
+                    <div class="teach-info">
+                        <h3 id="t-info" class="t-name">{{ course.teacher_name }}</h3>
+                        <h5 id="t-info" class="c-t-info">{{ course.teacher_info }}</h5>
+                        <p id="t-info">
+                            <a id="email-link" href=mailto:{{ course.email }}>{{ course.email }}</a>
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="card-item">
+                <h2 class="card-title">REQUIREMENTS </h2>
+                <h5 class="requo">
+                    {% set requirements = course.requirements.split('.') %}
+                    <li>{{ requirements[0] }}</li>
+                    {% if requirements[1]|length > 0 %}
+                    <li>{{ requirements[1] }}</li>
+                    {% endif %}
+                </h5>
+            </div>
+            <div class="card-item">
+                {% if course.board == "Edexcel" %}
+                <img class="card-title" src="/static/edexcel-vector-logo-removebg-preview.png" height="80px">
+                {% elif course.board == "OCR" %}
+                <img class="card-title" src="/static/ocr-logo-png-transparent.png" height="150px" style="padding-bottom: 4rem;">
+                {% elif course.board == "Pearson" %}
+                <img class="card-title" src="/static/1280px-Pearson_logo.svg.png" height="50px" style="margin-top: 0.7rem;">
+                {% else %}
+                <img class="card-title" src="/static/AQA_GCSE_English_Language_and_Literature_Resources-removebg-preview.png" height="80px">
+                {% endif %}
+                <h5 class="requo">
+                    {{ course.ucas_points}}
+                </h5>
+            </div>
+            <div class="card-item">
+                <h2 class="card-title">TOPICS</h2>
+                <h5 class="requo">
+                    {% set topics = course.topics.split(',') %}
+                    {% for topic in topics %}
+                    {% if topic[0:7] %}
+                    <li>{{ topic.title() }}</li>
+                    {% endif %}
+                    {% endfor %}
+                   
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="box-1">
+        <h2 class="course-heading">Course Description</h2>
+        <p class="c-description">{{ course.description }}</p>
+    </div> 
+    <div class="box-2">
+        <div class="testimonials">
+            <h2 class="course-heading">Testimonials</h2>
+            <em class="comment">{{ course.testimonials }}</em>
+            <p class="name">{{ course.testimonial_name }}</p>
+        </div>
+        <div class="exam-details">
+            <h2 class="course-heading">Exam Details</h2>
+            <div class="ed-grid">
+                {% if course.exam_percentage %}
+                <img id="ed-icon" src="/static/notes.png">
+                <h1 class="percent">{{ course.exam_percentage }}% exams</h1>
+                {% endif %} 
+                {% if 100 - course.exam_percentage %}
+                <img id="ed-icon" src="/static/reading-book.png">
+                <h1 class="percent">{{ 100 - course.exam_percentage }}% coursework</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

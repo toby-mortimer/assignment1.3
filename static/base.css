@@ -314,7 +314,7 @@
     width: 0;
     position: fixed;
     border-radius: 1%;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     right: auto;
     background-color: #3E79D2;

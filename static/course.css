@@ -1,6 +1,6 @@
 .container-fluid {
     padding-left: 5rem;
-    padding-right: 3rem;
+    padding-right: 4rem;
 }
 
 .top-part {
@@ -229,4 +229,8 @@ p.description {
     font-family: 'Ruda', sans-serif;
     color: black;
     font-size: 14.5px;
+}
+
+#see-more {
+    color: #888383;
 }

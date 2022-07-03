@@ -33,10 +33,10 @@
       <div class="cards">
         {% for course in courses %}
             <div class="col mb-4">
-                <a href="/applied-science">
+                <a href="/courses/{{ course.id }}">
                     <div class="course-card">
                         <div class="grid">
-                            <img class="course-img" src = {{ course.images }}>
+                            <img class="course-img" src = "/static/images/{{ course.id }}.jpg">
                         </div>
                         <div class="grid" id="text">
                             <div class="t-wrap">
@@ -66,25 +66,6 @@
             </div>
         {% endfor %}
         </div>
-        
-    
-        
-        
-    </div>
-      <!-- /.container -->
-    <div class="footer">
-        {% block footer %}
-        <section class="left">
-            <h3 id="contact">Contact Us:</h3>
-            <p id="details">Call 70608929607</p>
-            <p id="details">Email s6c@s6c.mlp.college</p>
-            <p id="details">Contact Form</p>
-        </section>
-        <section class="right">
-            <p>66-78 Tollgate Road, Salisbury, SP1 2JJ</p>
-            <img class="image" src="static/location.png" alt="" width="auto" height="160px">
-        </section>
-        {% endblock %}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
