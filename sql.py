@@ -43,8 +43,8 @@ class Courses(db.Model):
     board = db.Column(db.String(20))
 
     def __init__(self, title, type, teacherinfo, requirements, ucaspoints, topics, description, testimonials,
-                examdetails, tags, images, practicals, testimonial_name, exam_percentage, teacher_name, email,
-                board):
+                 examdetails, tags, images, practicals, testimonial_name, exam_percentage, teacher_name, email,
+                 board):
         self.title = title
         self.type = type
         self.teacher_info = teacherinfo
@@ -182,4 +182,4 @@ def delete_course(id):
 
 # Main program loop
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="localhost", debug=True, port=5000)
