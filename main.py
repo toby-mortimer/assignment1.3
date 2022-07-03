@@ -7,7 +7,7 @@ app = Flask(__name__, )
 # def prepare_courses_data(data):
 #     result = []
 #     for element in data:
-#         element = 
+#         element =
 #         result.append(element)
 
 
@@ -19,7 +19,8 @@ def index():
 @app.route("/courses")
 def courses():
     data = get("http://localhost:5000/course").json()
-    return render_template('course.html', courses = data)
+    return render_template('course.html', courses=data)
+
 
 @app.route("/about-us")
 def about_us():
@@ -34,7 +35,7 @@ def get_course(id):
 
 @app.route("/bursary")
 def bursary():
-    return render_template
+    return render_template('bursary.html')
 
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)

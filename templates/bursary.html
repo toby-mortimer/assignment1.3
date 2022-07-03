@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='bursary.css', _external=True) }}"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>{% block title %}{% endblock %}About Us</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="left">
+        <h2>What is it?</h2>
+        <p>
+            The Vulnerable Bursary is a grant of up to £1,200 for students who may have difficulties 
+            in completing their course because of financial considerations.
+        </p>
+        <h2>Requirements</h2>
+        <p>
+            - Young people in care, including unaccompanied asylum seeking children Care Leavers<b>
+            - Young people in receipt of Income Support or Universal Credit<b>
+            - Young people in receipt of both Disability Living Allowance (or the new Personal Independence<b>
+            Payments) and Employment Support Allowance (ESA, or Universal Credit as a replacement for ESA) in their own right.
+        </p>
+    </div>
+    <div class="right">
+
+    </div>
+    <div class="both">
+        <h2>How to apply?</h2>
+        <p>
+            If you think you are eligible for a bursary and would like to apply, you can either see the contact details below and send them a message or go straight to reception.<b>
+            Note: Each application for a discretionary bursary is individually assessed and there may be some flexibility based on an individual student’s circumstances. The bursary will 
+            usually be awarded as ‘benefit in kind’ e.g. the College will purchase the equipment/books or provide a voucher for a meal.
+        </p>
+    </div>
+</div>
