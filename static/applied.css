@@ -21,6 +21,12 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .container-fluid h1.head {
+        font-size: 30px;
+    }
+    .ed-grid h1.percent {
+        font-size: 25px;
+    }
 }
 
 h1.head {
