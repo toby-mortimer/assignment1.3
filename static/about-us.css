@@ -1,37 +1,56 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.container-fluid {
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
-.container {
+.text-wrapper {
     display: grid;
-    grid-template-rows: 20vh 60vh 20vh;
-    grid-template-columns: 60% 40%;
-    grid-template-areas:
-    "header header"
-    "left right"
-    "footer footer";
+    grid-template-columns: auto auto;
+    grid-template-rows: 100%;
+    column-gap: 3rem;
+    margin-top: 2rem;
 }
 
 .text {
-    grid-area: left;
-    font-size: 20px;
     font-family: 'Ubuntu', sans-serif;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    font-size: 20px;
     font-weight: 300;
 
 }
 
-h2 {
+h1.au-heading {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 65px;
+    letter-spacing: 2px;
     color: #3E79D2;
 }
 
-.image-au {
-    grid-area: right;
-    background-color: white;
+.text-wrapper .image-au {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: auto;
+}
+
+/* carousel */
+.swiper {
+    width: 60%;
+    height: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: absolute;
+}
+
+#image {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-self: center;   
 }
 

@@ -236,3 +236,7 @@ h1.percent {
     justify-content: flex-start;
     padding-bottom: 2rem;
 }
+
+a:hover {
+    text-decoration: none;
+}
