@@ -27,12 +27,34 @@ h1.au-heading {
     color: #3E79D2;
 }
 
-.text-wrapper .image-au {
+.image-au {
+    height: 450px;
+    width: auto;
+}
+
+@media screen and (max-width: 970px) {
+    .text-wrapper .students {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .text h1.au-heading {
+        font-size: 45px;
+    }
+    .text {
+        font-size: 15px;
+    }
+    .container-fluid {
+        padding-left: 2rem;
+        padding-right: 0rem;
+    }
+}
+
+.students {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: auto;
 }
 
 /* carousel */
