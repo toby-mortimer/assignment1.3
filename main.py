@@ -31,15 +31,14 @@ def about_us():
 @app.route("/courses/<id>")
 def get_course(id):
     data = get(f"http://localhost:5000/course/{id}").json()
-    if data:
+    try:
         return render_template('individual-course.html', course=data)
-    return "Course not found", 404
-
+    except:
+        abort(404)
 
 @app.route("/bursary")
 def bursary():
     return render_template('bursary.html')
-
 
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)
