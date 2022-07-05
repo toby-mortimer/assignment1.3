@@ -1,6 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from requests import get
-from get_filedir import get_filepaths
 
 app = Flask(__name__, )
 
@@ -18,8 +17,10 @@ def index():
 
 @app.route("/courses")
 def courses():
-    data = get("http://localhost:5000/course").json()
-    return render_template('course.html', courses=data)
+    try:
+        data = get(f"http://localhost:5000/course/{id}").json()
+    except:
+        abort(404)
 
 
 @app.route("/about-us")
