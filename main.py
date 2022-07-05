@@ -17,11 +17,11 @@ def index():
 
 @app.route("/courses")
 def courses():
+    data = get("http://localhost:5000/course").json()
     try:
-        data = get(f"http://localhost:5000/course/{id}").json()
+        return render_template('course.html', courses=data)
     except:
         abort(404)
-
 
 @app.route("/about-us")
 def about_us():
@@ -43,3 +43,4 @@ def bursary():
 
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)
+
