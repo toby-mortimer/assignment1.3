@@ -1,0 +1,61 @@
+.container-fluid {
+    padding-left: 5rem;
+    padding-right: 4rem;
+}
+
+.news-title #head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 65px;
+    letter-spacing: 2px;
+    color: #3E79D2;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    justify-content: center;
+}
+
+.news-img {
+    object-fit: cover;
+    height: 150px;
+    width: 100%;
+}
+
+.card-item {
+    display: grid;
+    gap: 2rem;
+    height: 150px;
+    width: 550px;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 50% 50%;
+    box-shadow: 3px 6px 6px 1px #888383;
+}
+
+h1.heading {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 40px;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 3px;
+    text-decoration: underline;
+}
+
+.sub {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 100%;
+}
+
+#sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 20px;
+}

@@ -40,6 +40,10 @@ def get_course(id):
 def bursary():
     return render_template('bursary.html')
 
+@app.route("/news-page")
+def news():
+    return render_template('news.html')
+
 if __name__ == '__main__':
     app.run(host="localhost", debug=True, port=8000)
 
