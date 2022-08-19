@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='news-item.css', _external=True) }}"/>
+<title>{% block title %}{% endblock %}News Item</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="return">
+        <a href="/news">
+            <img src="/static/return.png" alt="" class="return-logo">
+        </a>
+    </div>
+    <div class="wrapper">
+        <div class="info">
+            <h1 class="heading">UPCOMING UCAS FAIR</h1>
+            <h2 class="date">01-02-22</h2>
+            <p class="p1">You will have seen at the beginning of the week a reminder for the UCAS Fair for Year 12 students which is taking place on Thursday 7th April at Winchester University. All Year 12 students are expected to attend this trip as it provides an important enriching experience of visiting a university campus, as well as finding out about possible degree courses, career pathways or apprenticeship routes. If you have any queries please contact the office at office@s6c.mlp.college.   Students will be expected to wear their lanyards  as there are other colleges and 6th forms present at this event.  In the summer term, tutors will  increase their focus of Life skills sessions on career pathways and progression planning for university, Apprenticeships or employment after year 13.</p>
+            <p class="p2">It is also really important that students ensure they wear their lanyards at all times when they are in the college  building.  Our lanyards are a way for students and staff to identify themselves as part of the college community.  By wearing the lanyard students are safeguarding themselves as well as others within the college environment.  Last week we had a small group of students who are not part of our community come onto site to wait for friends. This was addressed quickly, but we want to avoid this to ensure we maintain a really safe and trusting environment.</p>
+        </div>
+        <div class="news-img">
+            <img src="/static/image 4.png" alt="" class="news-img">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+.container-fluid {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.return-logo {
+    height: 55px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.return-logo:hover {
+    transform: scale(1.05);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+}
+
+h1.heading {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 6px;
+    color: #3E79D2;
+}
+
+h2.date {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #3E79D2;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+img.news-img {
+    height: 580px;
+    margin-bottom: 2rem;
+}
+
+.news-img {
+    display: flex;
+    justify-content: center;
+}
