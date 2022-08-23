@@ -82,7 +82,6 @@
 .course-card {
     display: grid;
     height: 330px;
-    width: 460px;
     max-width: 100%;
     grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
@@ -95,13 +94,13 @@
 }
 
 @media screen and (min-width: 638px) and (max-width: 887px) {
-    .course-card {
+    /* .course-card {
         height: 410px;
         width: 550px;
     }
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    }
+    } */
     #desc{
         margin-left: 0.5rem;
     }
@@ -120,10 +119,10 @@
 }
 
 @media screen and (max-width: 637px) {
-    .course-card {
+    /* .course-card {
         height: 270px;
         width: 430px;
-    }
+    } */
     h1.card-title {
         font-size: 28px;
     }

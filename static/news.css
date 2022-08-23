@@ -1,6 +1,13 @@
+:root {
+    --fs-600: 65px;
+    --fs-500: 40px;
+    --fs-400: 20px;
+}
+
 .container-fluid {
-    padding-left: 5rem;
+    padding-left: 4rem;
     padding-right: 4rem;
+    max-width: 1500px;
 }
 
 .news-title #head {
@@ -9,7 +16,7 @@
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
-    font-size: 65px;
+    font-size: var(--fs-600);
     letter-spacing: 2px;
     color: #3E79D2;
     margin-top: 2rem;
@@ -22,20 +29,42 @@
     justify-content: center;
     align-items: center;
     row-gap: 2rem;
-    column-gap: 7rem;
+    column-gap: 2rem;
 }
 
 .news-img {
     object-fit: cover;
-    height: 150px;
+    height: 160px;
     width: 100%;
+}
+
+@media screen and (max-width: 706px) {
+    :root {
+        --fs-600: 60px;
+        --fs-500: 30px;
+        --fs-400: 18px;
+    }
+    .news-img {
+        height: 130px;
+    }
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1323px) {
+    :root {
+        --fs-500: 30px; 
+        --fs-400: 18px;
+    }
+    .news-img {
+        height: 130px;
+    }
 }
 
 .card-item {
     display: grid;
-    gap: 1.3rem;
-    height: 150px;
-    width: 550px;
     grid-template-columns: 35% 65%;
     grid-template-rows: 50% 50%;
     box-shadow: 3px 6px 6px 1px #888383;
@@ -52,24 +81,79 @@ h1.heading {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     color: black;
-    font-size: 40px;
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
+    font-size: var(--fs-500);
+    margin: 1rem 1.5rem 2.5rem 1.5rem;
     letter-spacing: 4px;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 524px) {
+    .news-img {
+        height: 100px;
+    }
+    h1.heading {
+        margin: 1rem 1.5rem 1rem 1.5rem;
+    }
 }
 
 .sub {
     display: grid;
     grid-template-columns: 70% 30%;
     grid-template-rows: 100%;
+    margin-left: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --fs-600: 40px;
+        --fs-500: 19px;
+        --fs-400: 13px;
+    }
+    .sub {
+        grid-template-columns: 60% 40%;
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    }
+    .news-img {
+        height: 80px;
+    }
+    h1.heading {
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    :root {
+        --fs-600: 30px;
+        --fs-500: 16px;
+        --fs-400: 10px;
+    }
+    .sub {
+        grid-template-columns: 65% 35%;
+        margin-left: 1rem;
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .news-img {
+        height: 60px;
+    }
+    h1.heading {
+        letter-spacing: 1px;
+        margin: 0.7rem 0 0.5rem 1rem;
+    }
+}
+
+.date {
+    margin-right: 1.2rem;
 }
 
 #sub {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: black;
-    font-size: 20px;
+    font-size: var(--fs-400);
 }
 
 a:hover {
