@@ -69,10 +69,9 @@ h1.head {
 @media screen and (max-width: 1047px) {
     .wrap {
         grid-template-columns: 100%;
+        grid-template-rows: 30% 70%
     }
-    .course-img {
-        display: none;
-    }
+    
 }
 
 #pic {
@@ -127,6 +126,7 @@ h2.course-heading {
     font-weight: 500;
     letter-spacing: 3px;
     margin-bottom: 1.2rem;
+    margin-top: 1rem;
 }
 
 p.c-description {
@@ -240,7 +240,7 @@ h1.percent {
     flex-direction: column;
     font-family: 'Ruda', sans-serif;
     justify-content: flex-start;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
 }
 
 a:hover {
