@@ -20,12 +20,6 @@
     }
 }
 
-@media screen and (max-width: 905px) {
-    h1.title-heading {
-        display: none;
-    }
-}
-
 .wrapper {
     display: flex;
     align-items: center;
@@ -43,11 +37,24 @@
 
 #key {
     justify-content: flex-start;
-    margin-left: 5rem;
+    margin-left: 1.3rem;
+}
+
+@media screen and (max-width: 905px) {
+    #head-title {
+        display: none;
+    }
+    .top-part {
+        display: flex;
+    }
+    #key {
+        justify-content: center;
+    }
 }
 
 #head-title {
     justify-content: flex-start;
+    margin-left: 1rem;
 }
 
 .keys {
