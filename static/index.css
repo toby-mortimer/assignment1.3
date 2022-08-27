@@ -186,7 +186,7 @@ a:hover {
 
 /* carousel */
 .swiper {
-    width: 60%;
+    width: 70%;
     height: 90%;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -201,4 +201,10 @@ a:hover {
     display: flex;
     align-items: center;
     justify-self: center;   
+}
+
+@media screen and (max-width: 700px) {
+    .swiper {
+        width: 90%;
+    }
 }
