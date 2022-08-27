@@ -66,18 +66,21 @@ h1.head {
     margin-bottom: 2rem;
 }
 
+#pic {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 1047px) {
     .wrap {
         grid-template-columns: 100%;
         grid-template-rows: 30% 70%
     }
+    #pic {
+        height: 100%;
+    }
     
-}
-
-#pic {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .cards {
