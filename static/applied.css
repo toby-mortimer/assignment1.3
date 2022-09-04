@@ -67,7 +67,8 @@ h1.head {
 }
 
 #pic {
-    height: 500px;
+    min-height: 500px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }

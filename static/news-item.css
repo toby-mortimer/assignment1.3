@@ -38,6 +38,7 @@
 .info {
     grid-area: text;
     margin-bottom: 2rem;
+    padding-right: 3rem;
 }
 
 .title {

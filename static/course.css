@@ -1,6 +1,7 @@
 .container-fluid {
     padding-left: 5rem;
     padding-right: 4rem;
+    max-width: 1650px;
 }
 
 .top-part {
