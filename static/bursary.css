@@ -84,10 +84,10 @@ h2.subtitle {
 }
 
 @media screen and (max-width: 1090px) {
-    h1.title {
-        font-size: 30px;
+    #text h1.title {
+        font-size: 28px;
     }
-    h2.subtitle {
+    #text h2.subtitle {
         font-size: 17px;
     }
 
@@ -133,4 +133,11 @@ ul {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+@media screen and (max-width: 488px) {
+    .circle {
+        height: 360px;
+        background-size: 280px;
+    }
 }
