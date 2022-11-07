@@ -49,5 +49,5 @@ def news_item():
     return render_template('news-item.html')
 
 if __name__ == '__main__':
-    app.run(host="localhost", debug=True, port=8000)
+    app.run(host="localhost", debug=True, port=9000)
 

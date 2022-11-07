@@ -24,6 +24,12 @@
     "text image";
 }
 
+.info {
+    grid-area: text;
+    margin-bottom: 2rem;
+    padding-right: 3rem;
+}
+
 @media screen and (max-width: 800px) {
     .wrapper {
         grid-template-columns: 100%;
@@ -33,12 +39,9 @@
         "image"
         "text";
     }
-}
-
-.info {
-    grid-area: text;
-    margin-bottom: 2rem;
-    padding-right: 3rem;
+    .info {
+        padding-right: 0;
+    }
 }
 
 .title {
